@@ -66,13 +66,13 @@ namespace mockturtle
 
             kitty::dynamic_truth_table compute_constant( bool value ) const
             {
-                kitty::dynamic_truth_table tt( numVars );
+                kitty::dynamic_truth_table tt( splitVar );
                 return value ? ~tt : tt;
             }
 
             kitty::dynamic_truth_table compute_pi( uint32_t index ) const
             {
-                kitty::dynamic_truth_table tt(numVars);
+                kitty::dynamic_truth_table tt(splitVar);
                 if(index < splitVar) {
                     kitty::create_nth_var(tt, index);
                 } else {
